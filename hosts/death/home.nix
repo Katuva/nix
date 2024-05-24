@@ -16,6 +16,7 @@
     pkgs.atuin
     pkgs.eza
     pkgs.fastfetch
+    pkgs.wl-clipboard
   ];
 
   fonts.fontconfig.enable = true;
@@ -44,8 +45,6 @@
       grep = "rg";
       find = "fd";
       lg = "lazygit";
-
-      yay = "paru";
     };
 
     initExtra = ''
@@ -77,8 +76,6 @@
   };
 
   home.file = {
-    ".p10k.zsh".source = "${config.home.homeDirectory}/.config/home-manager/sources/.p10k.zsh";
-
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/sources/nvim";
       recursive = true;
@@ -92,6 +89,10 @@
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/sources/kitty";
       recursive = true;
+    };
+
+    ".p10k.zsh" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/sources/.p10k.zsh";
     };
   };
 
