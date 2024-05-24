@@ -23,8 +23,9 @@
           # the path to your home.nix.
           modules = [ ./hosts/ventrix/home.nix ];
 
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
+          extraSpecialArgs = {
+            username = "wesley";
+          };
         };
 
         "wes@death" = home-manager.lib.homeManagerConfiguration {
@@ -34,8 +35,9 @@
           # the path to your home.nix.
           modules = [ ./hosts/death/home.nix ];
 
-          # Optionally use extraSpecialArgs
-          # to pass through arguments to home.nix
+          extraSpecialArgs = {
+            username = "wes";
+          };
         };
       };
     };
