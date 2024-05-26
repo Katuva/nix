@@ -28,6 +28,18 @@
           };
         };
 
+        "wes@mortis" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [ ./hosts/mortis/home.nix ];
+
+          extraSpecialArgs = {
+            username = "wes";
+          };
+        };
+
         "wes@death" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
