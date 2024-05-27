@@ -14,10 +14,14 @@
     pkgs.wl-clipboard
     pkgs.waybar
     pkgs.wofi
+    pkgs.ncspot
   ];
 
   home.file = {
-
+    ".config/ncspot" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/sources/ncspot";
+      recursive = true;
+    };
   };
 
 
